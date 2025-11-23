@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ميفوكس - شركة نقل العفش الرائدة في جدة. خدمات نقل احترافية، فك وتركيب، تخزين آمن. اتصل الآن!">
+    <meta name="keywords" content="نقل عفش جدة، شركة نقل، تخزين عفش، فك وتركيب، ميفوكس">
+    <title>ميفوكس - نقل العفش الاحترافي في جدة</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts - Cairo for Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        /* Custom Tailwind Config */
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            }
+        }
+        
+        /* Parallax Effect */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Pulse Animation */
+        @keyframes pulse-custom {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(249, 115, 22, 0);
+            }
+        }
+        
+        .btn-pulse {
+            animation: pulse-custom 2s infinite;
+        }
+        
+        /* Scrolling Banner */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .animate-scroll {
+            animation: scroll 20s linear infinite;
+        }
+        
+        /* Gradient Background */
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-orange {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+        }
+        
+        .gradient-blue {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        }
+        
+        /* Card Hover Effect */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        /* Counter Animation */
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        /* Timeline Line */
+        .timeline-line {
+            position: relative;
+        }
+        
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6 0%, #f97316 100%);
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+        
+        /* Sticky Header */
+        .header-scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Before/After Slider */
+        .before-after {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .before-after-slider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            overflow: hidden;
+            transition: width 0.3s ease;
+        }
+        
+        /* Chat Button */
+        .chat-button {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        /* Accordion */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 500px;
+        }
+        
+        /* Star Rating */
+        .star-rating {
+            color: #fbbf24;
+        }
+        
+        /* Loading Spinner */
+        .spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Price Calculator */
+        .calculator-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Top Banner - Special Offers -->
+    <div class="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-2 overflow-hidden">
+        <div class="flex animate-scroll whitespace-nowrap">
+            <span class="mx-8">🎉 عرض خاص: خصم 20% على جميع الخدمات لفترة محدودة!</span>
+            <span class="mx-8">📞 اتصل الآن: 0500000000</span>
+            <span class="mx-8">🚚 خدمة سريعة خلال 24 ساعة</span>
+            <span class="mx-8">✨ تأمين شامل على جميع المنقولات</span>
+            <span class="mx-8">🎉 عرض خاص: خصم 20% على جميع الخدمات لفترة محدودة!</span>
+            <span class="mx-8">📞 اتصل الآن: 0500000000</span>
+            <span class="mx-8">🚚 خدمة سريعة خلال 24 ساعة</span>
+            <span class="mx-8">✨ تأمين شامل على جميع المنقولات</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="fixed top-8 w-full z-50 transition-all duration-300">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center bg-white/80 backdrop-blur-md rounded-2xl shadow-lg px-6 py-3">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="bg-gradient-orange text-white w-12 h-12 rounded-xl flex items-center justify-center text-2xl font-bold">
+                        M
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-800">ميفوكس</h1>
+                        <p class="text-xs text-gray-600">نقل العفش الاحترافي</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <ul class="hidden lg:flex gap-6 text-gray-700 font-semibold">
+                    <li><a href="#home" class="hover:text-orange-500 transition">الرئيسية</a></li>
+                    <li><a href="#services" class="hover:text-orange-500 transition">خدماتنا</a></li>
+                    <li><a href="#how-it-works" class="hover:text-orange-500 transition">كيف نعمل</a></li>
+                    <li><a href="#offers" class="hover:text-orange-500 transition">العروض</a></li>
+                    <li><a href="#portfolio" class="hover:text-orange-500 transition">الأعمال</a></li>
+                    <li><a href="#testimonials" class="hover:text-orange-500 transition">التقييمات</a></li>
+                    <li><a href="#contact" class="hover:text-orange-500 transition">اتصل بنا</a></li>
+                </ul>
+                
+                <!-- Phone Number -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="tel:0500000000" class="flex items-center gap-2 bg-blue-600 text-white px-5 py-2 rounded-xl hover:bg-blue-700 transition">
+                        <i class="fas fa-phone"></i>
+                        <span class="font-bold">0500000000</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-gray-800 text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-white shadow-2xl z-50 p-6">
+        <button id="close-menu" class="absolute top-4 left-4 text-2xl text-gray-800">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="mt-12 space-y-4 text-gray-700 font-semibold">
+            <li><a href="#home" class="block hover:text-orange-500 transition">الرئيسية</a></li>
+            <li><a href="#services" class="block hover:text-orange-500 transition">خدماتنا</a></li>
+            <li><a href="#how-it-works" class="block hover:text-orange-500 transition">كيف نعمل</a></li>
+            <li><a href="#offers" class="block hover:text-orange-500 transition">العروض</a></li>
+            <li><a href="#portfolio" class="block hover:text-orange-500 transition">الأعمال</a></li>
+            <li><a href="#testimonials" class="block hover:text-orange-500 transition">التقييمات</a></li>
+            <li><a href="#contact" class="block hover:text-orange-500 transition">اتصل بنا</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center parallax" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070');">
+        <div class="container mx-auto px-4 text-center text-white pt-24" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-shadow">نقل العفش بسرعة وأمان في جدة</h1>
+            <p class="text-xl md:text-2xl mb-8 text-shadow">مع ميفوكس، نقل عفشك أصبح أسهل وأسرع وأكثر أماناً</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#contact" class="btn-pulse bg-gradient-orange text-white px-8 py-4 rounded-full text-lg font-bold hover:opacity-90 transition inline-flex items-center gap-3">
+                    <i class="fas fa-rocket"></i>
+                    اطلب خدمتك الآن
+                </a>
+                <a href="#calculator" class="bg-white text-gray-800 px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition inline-flex items-center gap-3">
+                    <i class="fas fa-calculator"></i>
+                    احسب التكلفة
+                </a>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-4xl font-bold text-orange-400 counter" data-target="5000">0</h3>
+                    <p class="text-lg mt-2">عميل سعيد</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-4xl font-bold text-orange-400 counter" data-target="99">0</h3>
+                    <p class="text-lg mt-2">نسبة الرضا %</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-4xl font-bold text-orange-400 counter" data-target="15">0</h3>
+                    <p class="text-lg mt-2">سنة خبرة</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-4xl font-bold text-orange-400">24/7</h3>
+                    <p class="text-lg mt-2">خدمة متواصلة</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Arrow -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-3xl"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">خدماتنا المتميزة</h2>
+                <p class="text-xl text-gray-600">نقدم مجموعة شاملة من خدمات نقل العفش الاحترافية</p>
+                <div class="w-24 h-1 bg-gradient-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-48 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                        <i class="fas fa-home text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">نقل عفش منازل</h3>
+                        <p class="text-gray-600 mb-4">نقل آمن وسريع لجميع محتويات منزلك مع ضمان سلامة الأثاث والمقتنيات الثمينة</p>
+                        <button class="text-orange-500 font-bold hover:text-orange-600 transition inline-flex items-center gap-2">
+                            معرفة المزيد
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-48 bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center">
+                        <i class="fas fa-building text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">نقل مكاتب</h3>
+                        <p class="text-gray-600 mb-4">نقل احترافي لمكاتب الشركات مع الحفاظ على سرية الوثائق وسلامة المعدات</p>
+                        <button class="text-orange-500 font-bold hover:text-orange-600 transition inline-flex items-center gap-2">
+                            معرفة المزيد
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-48 bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
+                        <i class="fas fa-tools text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">فك وتركيب الأثاث</h3>
+                        <p class="text-gray-600 mb-4">فريق محترف لفك وتركيب جميع أنواع الأثاث مع ضمان سلامة القطع</p>
+                        <button class="text-orange-500 font-bold hover:text-orange-600 transition inline-flex items-center gap-2">
+                            معرفة المزيد
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-48 bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center">
+                        <i class="fas fa-warehouse text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">تخزين العفش</h3>
+                        <p class="text-gray-600 mb-4">مستودعات آمنة ومؤمنة لتخزين عفشك لأي فترة زمنية مع مراقبة على مدار الساعة</p>
+                        <button class="text-orange-500 font-bold hover:text-orange-600 transition inline-flex items-center gap-2">
+                            معرفة المزيد
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative h-48 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+                        <i class="fas fa-weight-hanging text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">نقل القطع الثقيلة</h3>
+                        <p class="text-gray-600 mb-4">معدات خاصة وفريق مدرب لنقل الأثاث الثقيل والأجهزة الكبيرة بأمان تام</p>
+                        <button class="text-orange-500 font-bold hover:text-orange-600 transition inline-flex items-center gap-2">
+                            معرفة المزيد
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative h-48 bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center">
+                        <i class="fas fa-box text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">تغليف احترافي</h3>
+                        <p class="text-gray-600 mb-4">مواد تغليف عالية الجودة وتقنيات احترافية لحماية أثاثك أثناء النقل</p>
+                        <button class="text-orange-500 font-bold hover:text-orange-600 transition inline-flex items-center gap-2">
+                            معرفة المزيد
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">كيف نعمل</h2>
+                <p class="text-xl text-gray-600">عملية بسيطة وواضحة لضمان راحتك</p>
+                <div class="w-24 h-1 bg-gradient-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="relative">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative inline-block mb-6">
+                            <div class="w-32 h-32 bg-gradient-blue rounded-full flex items-center justify-center text-white text-5xl font-bold shadow-2xl">
+                                1
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">اتصل بنا</h3>
+                        <p class="text-gray-600">تواصل معنا عبر الهاتف أو الموقع للحجز المبدئي واستفسر عن خدماتنا</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative inline-block mb-6">
+                            <div class="w-32 h-32 bg-gradient-orange rounded-full flex items-center justify-center text-white text-5xl font-bold shadow-2xl">
+                                2
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-eye text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">معاينة مجانية</h3>
+                        <p class="text-gray-600">نرسل فريقنا لمعاينة العفش وتقييم الاحتياجات بدقة</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative inline-block mb-6">
+                            <div class="w-32 h-32 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center text-white text-5xl font-bold shadow-2xl">
+                                3
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-dollar-sign text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">تحديد السعر والموعد</h3>
+                        <p class="text-gray-600">نقدم عرض سعر واضح وشفاف ونحدد الموعد المناسب لك</p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative inline-block mb-6">
+                            <div class="w-32 h-32 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center text-white text-5xl font-bold shadow-2xl">
+                                4
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-truck text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">تنفيذ آمن</h3>
+                        <p class="text-gray-600">فريقنا المحترف ينفذ عملية النقل بكل أمان واحترافية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section id="offers" class="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">عروضنا وباقاتنا</h2>
+                <p class="text-xl text-gray-600">اختر الباقة المناسبة لاحتياجاتك</p>
+                <div class="w-24 h-1 bg-gradient-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <!-- Countdown Timer -->
+            <div class="text-center mb-12" data-aos="fade-up">
+                <div class="bg-red-500 text-white inline-block px-8 py-4 rounded-2xl shadow-xl">
+                    <p class="text-sm font-semibold mb-2">العرض ينتهي خلال:</p>
+                    <div class="flex gap-4 text-center">
+                        <div>
+                            <span id="days" class="text-3xl font-bold">00</span>
+                            <p class="text-xs">يوم</p>
+                        </div>
+                        <span class="text-3xl font-bold">:</span>
+                        <div>
+                            <span id="hours" class="text-3xl font-bold">00</span>
+                            <p class="text-xs">ساعة</p>
+                        </div>
+                        <span class="text-3xl font-bold">:</span>
+                        <div>
+                            <span id="minutes" class="text-3xl font-bold">00</span>
+                            <p class="text-xs">دقيقة</p>
+                        </div>
+                        <span class="text-3xl font-bold">:</span>
+                        <div>
+                            <span id="seconds" class="text-3xl font-bold">00</span>
+                            <p class="text-xs">ثانية</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Basic Package -->
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-gradient-blue text-white text-center py-8">
+                        <h3 class="text-3xl font-bold mb-2">الباقة الأساسية</h3>
+                        <p class="text-sm opacity-90">للمنازل الصغيرة</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-center mb-6">
+                            <span class="text-5xl font-bold text-gray-800">999</span>
+                            <span class="text-2xl text-gray-600">ريال</span>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>نقل عفش المنزل</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>فريق من 3 عمال</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>سيارة واحدة</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>تغليف أساسي</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-400">
+                                <i class="fas fa-times-circle"></i>
+                                <span>تأمين شامل</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition">
+                            احجز الآن
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Premium Package -->
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden card-hover relative transform md:scale-105" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-4 right-4 bg-red-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                        الأكثر طلباً
+                    </div>
+                    <div class="bg-gradient-orange text-white text-center py-8">
+                        <h3 class="text-3xl font-bold mb-2">الباقة المتكاملة</h3>
+                        <p class="text-sm opacity-90">للمنازل المتوسطة</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-center mb-6">
+                            <span class="text-5xl font-bold text-gray-800">1999</span>
+                            <span class="text-2xl text-gray-600">ريال</span>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>نقل عفش كامل</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>فريق من 5 عمال</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>سيارتين</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>تغليف احترافي</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>فك وتركيب الأثاث</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>تأمين شامل</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-gradient-orange text-white py-3 rounded-xl font-bold hover:opacity-90 transition">
+                            احجز الآن
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Luxury Package -->
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-gradient-to-br from-purple-600 to-purple-800 text-white text-center py-8">
+                        <h3 class="text-3xl font-bold mb-2">باقة Premium</h3>
+                        <p class="text-sm opacity-90">للفلل والمنازل الكبيرة</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-center mb-6">
+                            <span class="text-5xl font-bold text-gray-800">3999</span>
+                            <span class="text-2xl text-gray-600">ريال</span>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>نقل فلل كاملة</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>فريق من 8 عمال</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>3 سيارات</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>تغليف فاخر</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>فك وتركيب كامل</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>تأمين VIP شامل</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>تنظيف شامل</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-purple-600 text-white py-3 rounded-xl font-bold hover:bg-purple-700 transition">
+                            احجز الآن
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">لماذا تختار ميفوكس؟</h2>
+                <p class="text-xl text-gray-600">نتميز بالاحترافية والجودة والخدمة المتميزة</p>
+                <div class="w-24 h-1 bg-gradient-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Feature 1 -->
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-gradient-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">فريق مدرب محترف</h3>
+                    <p class="text-gray-600">فريق عمل مدرب على أعلى مستوى من الاحترافية والكفاءة</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-gradient-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-truck-loading text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">معدات حديثة وآمنة</h3>
+                    <p class="text-gray-600">نستخدم أحدث المعدات والتقنيات لضمان سلامة أثاثك</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">تأمين على الأثاث</h3>
+                    <p class="text-gray-600">نوفر تأميناً شاملاً على جميع المنقولات أثناء النقل</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-dollar-sign text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">أسعار تنافسية</h3>
+                    <p class="text-gray-600">أفضل الأسعار في السوق مع ضمان الجودة العالية</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">خدمة 24/7</h3>
+                    <p class="text-gray-600">نعمل على مدار الساعة لخدمتك في أي وقت تحتاجنا</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-smile text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">ضمان الرضا التام</h3>
+                    <p class="text-gray-600">نضمن رضاك الكامل عن خدماتنا أو نعيد أموالك</p>
+                </div>
+            </div>
+            
+            <!-- Certifications -->
+            <div class="text-center" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8">شهادات الجودة والاعتماد</h3>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="bg-gray-100 px-8 py-4 rounded-xl">
+                        <i class="fas fa-certificate text-orange-500 text-4xl mb-2"></i>
+                        <p class="font-semibold">ISO 9001</p>
+                    </div>
+                    <div class="bg-gray-100 px-8 py-4 rounded-xl">
+                        <i class="fas fa-award text-blue-500 text-4xl mb-2"></i>
+                        <p class="font-semibold">جودة معتمدة</p>
+                    </div>
+                    <div class="bg-gray-100 px-8 py-4 rounded-xl">
+                        <i class="fas fa-medal text-green-500 text-4xl mb-2"></i>
+                        <p class="font-semibold">شهادة تميز</p>
+                    </div>
+                    <div class="bg-gray-100 px-8 py-4 rounded-xl">
+                        <i class="fas fa-star text-yellow-500 text-4xl mb-2"></i>
+                        <p class="font-semibold">5 نجوم</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">معرض أعمالنا</h2>
+                <p class="text-xl text-gray-600">شاهد بعض مشاريعنا الناجحة</p>
+                <div class="w-24 h-1 bg-gradient-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
+                <button class="filter-btn active px-6 py-3 bg-orange-500 text-white rounded-xl font-semibold hover:bg-orange-600 transition" data-filter="all">
+                    الكل
+                </button>
+                <button class="filter-btn px-6 py-3 bg-white text-gray-800 rounded-xl font-semibold hover:bg-orange-500 hover:text-white transition" data-filter="homes">
+                    منازل
+                </button>
+                <button class="filter-btn px-6 py-3 bg-white text-gray-800 rounded-xl font-semibold hover:bg-orange-500 hover:text-white transition" data-filter="offices">
+                    مكاتب
+                </button>
+                <button class="filter-btn px-6 py-3 bg-white text-gray-800 rounded-xl font-semibold hover:bg-orange-500 hover:text-white transition" data-filter="villas">
+                    فلل
+                </button>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item homes card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=800" alt="نقل منزل" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                            منزل
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">نقل منزل في حي الصفا</h3>
+                        <p class="text-gray-600 mb-4">نقل كامل لمنزل مكون من 4 غرف مع فك وتركيب الأثاث</p>
+                        <button class="lightbox-btn text-orange-500 font-bold hover:text-orange-600 transition" data-image="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200">
+                            <i class="fas fa-search-plus mr-2"></i>
+                            عرض التفاصيل
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item offices card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800" alt="نقل مكتب" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                            مكتب
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">نقل مكتب شركة تقنية</h3>
+                        <p class="text-gray-600 mb-4">نقل مكتب كامل بجميع المعدات والأثاث المكتبي</p>
+                        <button class="lightbox-btn text-orange-500 font-bold hover:text-orange-600 transition" data-image="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200">
+                            <i class="fas fa-search-plus mr-2"></i>
+                            عرض التفاصيل
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item villas card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-64 bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=800" alt="نقل فيلا" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                            فيلا
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">نقل فيلا فاخرة</h3>
+                        <p class="text-gray-600 mb-4">نقل فيلا كاملة مع جميع المحتويات والديكورات</p>
+                        <button class="lightbox-btn text-orange-500 font-bold hover:text-orange-600 transition" data-image="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1200">
+                            <i class="fas fa-search-plus mr-2"></i>
+                            عرض التفاصيل
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item homes card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?q=80&w=800" alt="تغليف احترافي" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                            منزل
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">تغليف احترافي</h3>
+                        <p class="text-gray-600 mb-4">تغليف كامل لمحتويات منزل بمواد عالية الجودة</p>
+                        <button class="lightbox-btn text-orange-500 font-bold hover:text-orange-600 transition" data-image="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?q=80&w=1200">
+                            <i class="fas fa-search-plus mr-2"></i>
+                            عرض التفاصيل
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item offices card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800" alt="نقل مقر شركة" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                            مكتب
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">نقل مقر شركة كبرى</h3>
+                        <p class="text-gray-600 mb-4">نقل مقر شركة بجميع المعدات والأثاث بكفاءة عالية</p>
+                        <button class="lightbox-btn text-orange-500 font-bold hover:text-orange-600 transition" data-image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200">
+                            <i class="fas fa-search-plus mr-2"></i>
+                            عرض التفاصيل
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item villas card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-64 bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800" alt="فيلا مودرن" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                            فيلا
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">فيلا مودرن</h3>
+                        <p class="text-gray-600 mb-4">نقل فيلا حديثة مع ديكورات فاخرة بكل احترافية</p>
+                        <button class="lightbox-btn text-orange-500 font-bold hover:text-orange-600 transition" data-image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200">
+                            <i class="fas fa-search-plus mr-2"></i>
+                            عرض التفاصيل
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">فريق العمل المحترف</h2>
+                <p class="text-xl text-gray-600">تعرف على الفريق الذي يخدمك</p>
+                <div class="w-24 h-1 bg-gradient-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative inline-block mb-4">
+                        <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-orange-500 shadow-xl">
+                            <img src="https://i.pravatar.cc/300?img=12" alt="محمد الأحمد" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-2 right-2 w-12 h-12 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
+                            <i class="fas fa-check text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">محمد الأحمد</h3>
+                    <p class="text-orange-500 font-semibold mb-2">مدير العمليات</p>
+                    <p class="text-gray-600 text-sm mb-4">خبرة 15 سنة في مجال النقل</p>
+                    <div class="flex justify-center gap-3">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative inline-block mb-4">
+                        <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
+                            <img src="https://i.pravatar.cc/300?img=15" alt="أحمد العمري" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-2 right-2 w-12 h-12 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
+                            <i class="fas fa-check text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">أحمد العمري</h3>
+                    <p class="text-blue-500 font-semibold mb-2">مشرف الفريق</p>
+                    <p class="text-gray-600 text-sm mb-4">خبرة 12 سنة في الإشراف</p>
+                    <div class="flex justify-center gap-3">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative inline-block mb-4">
+                        <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-purple-500 shadow-xl">
+                            <img src="https://i.pravatar.cc/300?img=33" alt="خالد الحربي" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-2 right-2 w-12 h-12 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
+                            <i class="fas fa-check text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">خالد الحربي</h3>
+                    <p class="text-purple-500 font-semibold mb-2">فني فك وتركيب</p>
+                    <p class="text-gray-600 text-sm mb-4">خبرة 10 سنوات في الفك والتركيب</p>
+                    <div class="flex justify-center gap-3">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative inline-block mb-4">
+                        <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-green-500 shadow-xl">
+                            <img src="https://i.pravatar.cc/300?img=52" alt="عبدالله السعيد" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-2 right-2 w-12 h-12 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
+                            <i class="fas fa-check text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">عبدالله السعيد</h3>
+                    <p class="text-green-500 font-semibold mb-2">سائق محترف</p>
+                    <p class="text-gray-600 text-sm mb-4">خبرة 8 سنوات في القيادة الآمنة</p>
+                    <div class="flex justify-center gap-3">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">الأسئلة الشائعة</h2>
+                <p class="text-xl text-gray-600">إجابات على أكثر الأسئلة شيوعاً</p>
+                <div class="w-24 h-1 bg-gradient-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 text-right hover:bg-gray-50 transition">
+                        <span class="text-xl font-bold text-gray-800">كيف يتم احتساب تكلفة النقل؟</span>
+                        <i class="fas fa-chevron-down text-orange-500 text-xl transform transition-transform"></i>
+                    </button>
+                    <div class="accordion-content p-6 bg-gray-50">
+                        <p class="text-gray-600 leading-relaxed">يتم احتساب التكلفة بناءً على عدة عوامل: حجم العفش، المسافة بين الموقعين، عدد العمال المطلوبين، الخدمات الإضافية مثل الفك والتركيب والتغليف. نقدم معاينة مجانية لتحديد السعر بدقة.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 text-right hover:bg-gray-50 transition">
+                        <span class="text-xl font-bold text-gray-800">كم تستغرق عملية النقل؟</span>
+                        <i class="fas fa-chevron-down text-orange-500 text-xl transform transition-transform"></i>
+                    </button>
+                    <div class="accordion-content p-6 bg-gray-50">
+                        <p class="text-gray-600 leading-relaxed">تختلف مدة النقل حسب حجم العفش والمسافة. عادةً، نقل منزل متوسط يستغرق من 4-6 ساعات، بينما قد تحتاج الفلل الكبيرة إلى يوم كامل. نحرص على إنجاز العمل بكفاءة دون التضحية بالجودة.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 text-right hover:bg-gray-50 transition">
+                        <span class="text-xl font-bold text-gray-800">هل يوجد تأمين على العفش؟</span>
+                        <i class="fas fa-chevron-down text-orange-500 text-xl transform transition-transform"></i>
+                    </button>
+                    <div class="accordion-content p-6 bg-gray-50">
+                        <p class="text-gray-600 leading-relaxed">نعم، نوفر تأميناً شاملاً على جميع المنقولات. في حالة حدوث أي ضرر (نادر جداً)، نتحمل المسؤولية الكاملة ونعوض العميل. كما نستخدم أفضل تقنيات التغليف والنقل لضمان سلامة أثاثك.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 text-right hover:bg-gray-50 transition">
+                        <span class="text-xl font-bold text-gray-800">ما هي مناطق الخدمة؟</span>
+                        <i class="fas fa-chevron-down text-orange-500 text-xl transform transition-transform"></i>
+                    </button>
+                    <div class="accordion-content p-6 bg-gray-50">
+                        <p class="text-gray-600 leading-relaxed">نغطي جميع أحياء مدينة جدة ونقدم خدماتنا أيضاً للمدن القريبة مثل مكة المكرمة والطائف ورابغ. للمسافات الأبعد، يرجى التواصل معنا لترتيب الخدمة.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 text-right hover:bg-gray-50 transition">
+                        <span class="text-xl font-bold text-gray-800">هل تقدمون خدمة التخزين؟</span>
+                        <i class="fas fa-chevron-down text-orange-500 text-xl transform transition-transform"></i>
+                    </button>
+                    <div class="accordion-content p-6 bg-gray-50">
+                        <p class="text-gray-600 leading-relaxed">نعم، لدينا مستودعات حديثة وآمنة لتخزين العفش لأي فترة زمنية. المستودعات مكيفة ومراقبة على مدار الساعة لضمان سلامة محتوياتك. نقدم أسعاراً تنافسية للتخزين الشهري.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 text-right hover:bg-gray-50 transition">
+                        <span class="text-xl font-bold text-gray-800">كيف يمكنني حجز الخدمة؟</span>
+                        <i class="fas fa-chevron-down text-orange-500 text-xl transform transition-transform"></i>
+                    </button>
+                    <div class="accordion-content p-6 bg-gray-50">
+                        <p class="text-gray-600 leading-relaxed">يمكنك الحجز بعدة طرق: الاتصال على 0500000000، التواصل عبر واتساب، ملء نموذج الحجز على الموقع، أو الدردشة المباشرة. فريق خدمة العملاء متاح على مدار الساعة لمساعدتك.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">آراء عملائنا</h2>
+                <p class="text-xl text-gray-600">ماذا يقول عملاؤنا عن خدماتنا</p>
+                <div class="w-24 h-1 bg-gradient-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <!-- Testimonials Carousel -->
+            <div class="relative max-w-6xl mx-auto">
+                <div id="testimonials-carousel" class="overflow-hidden">
+                    <div class="flex transition-transform duration-500">
+                        <!-- Testimonial 1 -->
+                        <div class="min-w-full px-4">
+                            <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-3xl p-8 md:p-12 shadow-xl">
+                                <div class="flex items-center gap-6 mb-6">
+                                    <img src="https://i.pravatar.cc/150?img=8" alt="فاطمة الزهراني" class="w-20 h-20 rounded-full border-4 border-orange-500">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-800">فاطمة الزهراني</h3>
+                                        <div class="flex gap-1 my-2">
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                        </div>
+                                        <p class="text-gray-600">حي الروضة - جدة</p>
+                                    </div>
+                                </div>
+                                <p class="text-xl text-gray-700 leading-relaxed italic">
+                                    "خدمة رائعة وفريق محترف جداً! نقلوا عفش منزلي بكل أمان واحترافية. سعيدة جداً بالخدمة وأنصح الجميع بالتعامل مع ميفوكس."
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="min-w-full px-4">
+                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 md:p-12 shadow-xl">
+                                <div class="flex items-center gap-6 mb-6">
+                                    <img src="https://i.pravatar.cc/150?img=13" alt="عمر العتيبي" class="w-20 h-20 rounded-full border-4 border-blue-500">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-800">عمر العتيبي</h3>
+                                        <div class="flex gap-1 my-2">
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                        </div>
+                                        <p class="text-gray-600">حي الشاطئ - جدة</p>
+                                    </div>
+                                </div>
+                                <p class="text-xl text-gray-700 leading-relaxed italic">
+                                    "أفضل شركة نقل عفش تعاملت معها. سرعة في الأداء، أمانة في التعامل، وأسعار ممتازة. شكراً لفريق ميفوكس على الخدمة الرائعة!"
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="min-w-full px-4">
+                            <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl p-8 md:p-12 shadow-xl">
+                                <div class="flex items-center gap-6 mb-6">
+                                    <img src="https://i.pravatar.cc/150?img=20" alt="نورة المطيري" class="w-20 h-20 rounded-full border-4 border-purple-500">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-800">نورة المطيري</h3>
+                                        <div class="flex gap-1 my-2">
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                        </div>
+                                        <p class="text-gray-600">حي الصفا - جدة</p>
+                                    </div>
+                                </div>
+                                <p class="text-xl text-gray-700 leading-relaxed italic">
+                                    "تجربة ممتازة من البداية للنهاية. الفريق محترم ومهني، والأسعار معقولة جداً. نقلوا فيلتي بكل حذر واهتمام. بالتأكيد سأتعامل معهم مرة أخرى."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <button id="prev-testimonial" class="absolute top-1/2 right-0 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center text-orange-500 hover:bg-orange-500 hover:text-white transition">
+                    <i class="fas fa-chevron-right text-xl"></i>
+                </button>
+                <button id="next-testimonial" class="absolute top-1/2 left-0 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center text-orange-500 hover:bg-orange-500 hover:text-white transition">
+                    <i class="fas fa-chevron-left text-xl"></i>
+                </button>
+                
+                <!-- Carousel Dots -->
+                <div class="flex justify-center gap-3 mt-8">
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-orange-500" data-index="0"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300" data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">مدونتنا</h2>
+                <p class="text-xl text-gray-600">نصائح ومقالات مفيدة عن نقل العفش</p>
+                <div class="w-24 h-1 bg-gradient-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1600518464441-9154a4dea6b4?q=80&w=800" alt="نصائح التغليف" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4 text-sm text-gray-600">
+                            <span><i class="far fa-calendar ml-2"></i>15 ديسمبر 2024</span>
+                            <span><i class="far fa-user ml-2"></i>إدارة ميفوكس</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">10 نصائح لتغليف العفش بشكل صحيح</h3>
+                        <p class="text-gray-600 mb-4">تعرف على أفضل الطرق لتغليف أثاثك لضمان وصوله بأمان إلى منزلك الجديد...</p>
+                        <a href="#" class="text-orange-500 font-bold hover:text-orange-600 transition inline-flex items-center gap-2">
+                            اقرأ المزيد
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800" alt="اختيار شركة النقل" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4 text-sm text-gray-600">
+                            <span><i class="far fa-calendar ml-2"></i>12 ديسمبر 2024</span>
+                            <span><i class="far fa-user ml-2"></i>إدارة ميفوكس</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">كيف تختار شركة نقل عفش موثوقة؟</h3>
+                        <p class="text-gray-600 mb-4">دليل شامل لاختيار أفضل شركة نقل عفش تناسب احتياجاتك وميزانيتك...</p>
+                        <a href="#" class="text-orange-500 font-bold hover:text-orange-600 transition inline-flex items-center gap-2">
+                            اقرأ المزيد
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1556912173-46c336c7fd55?q=80&w=800" alt="التحضير للنقل" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4 text-sm text-gray-600">
+                            <span><i class="far fa-calendar ml-2"></i>8 ديسمبر 2024</span>
+                            <span><i class="far fa-user ml-2"></i>إدارة ميفوكس</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">خطوات التحضير ليوم النقل</h3>
+                        <p class="text-gray-600 mb-4">خطة شاملة لمساعدتك في الاستعداد ليوم نقل العفش لتجنب أي مشاكل...</p>
+                        <a href="#" class="text-orange-500 font-bold hover:text-orange-600 transition inline-flex items-center gap-2">
+                            اقرأ المزيد
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Calculator Section -->
+    <section id="calculator" class="py-20 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">احسب تكلفة النقل</h2>
+                <p class="text-xl text-blue-100">احصل على تقدير فوري لتكلفة نقل عفشك</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto calculator-card rounded-3xl p-8 md:p-12 shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+                <form id="calculator-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">نوع المنزل</label>
+                            <select id="house-type" class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-orange-500 focus:outline-none transition">
+                                <option value="">اختر نوع المنزل</option>
+                                <option value="apartment" data-rooms="2">شقة صغيرة (غرفتين)</option>
+                                <option value="medium-apartment" data-rooms="3">شقة متوسطة (3 غرف)</option>
+                                <option value="large-apartment" data-rooms="4">شقة كبيرة (4 غرف)</option>
+                                <option value="villa" data-rooms="5">فيلا</option>
+                                <option value="duplex" data-rooms="6">دوبلكس</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">المسافة (كم)</label>
+                            <input type="number" id="distance" min="1" max="500" placeholder="أدخل المسافة بالكيلومتر" class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-orange-500 focus:outline-none transition">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">خدمات إضافية</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 cursor-pointer">
+                                    <input type="checkbox" class="w-5 h-5 text-orange-500 rounded focus:ring-orange-500" value="packing">
+                                    <span>تغليف احترافي (+200 ريال)</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer">
+                                    <input type="checkbox" class="w-5 h-5 text-orange-500 rounded focus:ring-orange-500" value="disassembly">
+                                    <span>فك وتركيب (+300 ريال)</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer">
+                                    <input type="checkbox" class="w-5 h-5 text-orange-500 rounded focus:ring-orange-500" value="storage">
+                                    <span>تخزين شهري (+500 ريال)</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">موعد النقل</label>
+                            <input type="date" id="moving-date" class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-orange-500 focus:outline-none transition mb-4">
+                            <label class="block text-gray-700 font-semibold mb-2">رقم الهاتف</label>
+                            <input type="tel" id="phone" placeholder="05xxxxxxxx" class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-orange-500 focus:outline-none transition">
+                        </div>
+                    </div>
+                    
+                    <div class="text-center pt-6 border-t-2 border-gray-200">
+                        <button type="button" id="calculate-btn" class="bg-gradient-orange text-white px-12 py-4 rounded-full text-xl font-bold hover:opacity-90 transition">
+                            احسب التكلفة
+                        </button>
+                    </div>
+                    
+                    <div id="calculator-result" class="hidden mt-8 p-6 bg-green-50 rounded-2xl border-2 border-green-200">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">التكلفة التقديرية</h3>
+                            <div class="text-5xl font-bold text-orange-500 mb-4">
+                                <span id="total-price">0</span> ريال
+                            </div>
+                            <p class="text-gray-600 mb-6">* السعر تقديري وقد يتغير بعد المعاينة</p>
+                            <button type="button" class="bg-gradient-blue text-white px-8 py-3 rounded-xl font-bold hover:opacity-90 transition">
+                                احجز الآن
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">اتصل بنا</h2>
+                <p class="text-xl text-gray-600">نحن هنا لخدمتك في أي وقت</p>
+                <div class="w-24 h-1 bg-gradient-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div data-aos="fade-left">
+                    <div class="bg-white rounded-3xl shadow-xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">أرسل رسالتك</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">الاسم الكامل</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-orange-500 focus:outline-none transition" placeholder="أدخل اسمك">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">رقم الهاتف</label>
+                                <input type="tel" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-orange-500 focus:outline-none transition" placeholder="05xxxxxxxx">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">البريد الإلكتروني</label>
+                                <input type="email" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-orange-500 focus:outline-none transition" placeholder="email@example.com">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">نوع الخدمة</label>
+                                <select class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-orange-500 focus:outline-none transition">
+                                    <option>نقل عفش منازل</option>
+                                    <option>نقل مكاتب</option>
+                                    <option>فك وتركيب</option>
+                                    <option>تخزين</option>
+                                    <option>استفسار عام</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">الرسالة</label>
+                                <textarea rows="4" class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-orange-500 focus:outline-none transition" placeholder="اكتب رسالتك هنا..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-gradient-orange text-white py-4 rounded-xl font-bold text-lg hover:opacity-90 transition">
+                                إرسال الرسالة
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div data-aos="fade-right">
+                    <div class="space-y-6">
+                        <!-- Phone -->
+                        <div class="bg-gradient-blue text-white rounded-3xl p-8 shadow-xl">
+                            <div class="flex items-start gap-4">
+                                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-3xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-2">اتصل بنا</h3>
+                                    <p class="text-blue-100 mb-2">متاحون على مدار الساعة</p>
+                                    <a href="tel:0500000000" class="text-2xl font-bold hover:text-blue-200 transition">0500000000</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- WhatsApp -->
+                        <div class="bg-gradient-to-br from-green-500 to-green-700 text-white rounded-3xl p-8 shadow-xl">
+                            <div class="flex items-start gap-4">
+                                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fab fa-whatsapp text-3xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-2">واتساب</h3>
+                                    <p class="text-green-100 mb-2">تواصل معنا فوراً</p>
+                                    <a href="https://wa.me/966500000000" class="text-2xl font-bold hover:text-green-200 transition">0500000000</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Location -->
+                        <div class="bg-gradient-orange text-white rounded-3xl p-8 shadow-xl">
+                            <div class="flex items-start gap-4">
+                                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-3xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-2">موقعنا</h3>
+                                    <p class="text-orange-100 mb-2">مركزنا الرئيسي</p>
+                                    <p class="text-lg">جدة - حي الصفا - شارع الأمير محمد</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="bg-gradient-to-br from-purple-600 to-purple-800 text-white rounded-3xl p-8 shadow-xl">
+                            <div class="flex items-start gap-4">
+                                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-3xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-2">البريد الإلكتروني</h3>
+                                    <p class="text-purple-100 mb-2">راسلنا في أي وقت</p>
+                                    <a href="mailto:info@mevox.sa" class="text-xl font-bold hover:text-purple-200 transition">info@mevox.sa</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Working Hours -->
+                    <div class="bg-white rounded-3xl shadow-xl p-8 mt-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+                            <i class="fas fa-clock text-orange-500"></i>
+                            ساعات العمل
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center py-2 border-b">
+                                <span class="font-semibold text-gray-700">السبت - الخميس</span>
+                                <span class="text-gray-600">8:00 ص - 10:00 م</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b">
+                                <span class="font-semibold text-gray-700">الجمعة</span>
+                                <span class="text-gray-600">2:00 م - 10:00 م</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2">
+                                <span class="font-semibold text-gray-700">الطوارئ</span>
+                                <span class="text-green-600 font-bold">24/7 متاح</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map -->
+            <div class="mt-16" data-aos="fade-up">
+                <div class="bg-white rounded-3xl shadow-xl p-4 overflow-hidden">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3710.6094087893705!2d39.17242931493975!3d21.57068728576089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d01fb1137e59%3A0xe059579737b118db!2sJeddah%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1234567890"
+                        width="100%" 
+                        height="450" 
+                        style="border:0; border-radius: 16px;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="bg-gradient-orange text-white w-12 h-12 rounded-xl flex items-center justify-center text-2xl font-bold">
+                            M
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">ميفوكس</h3>
+                            <p class="text-sm text-gray-400">نقل العفش الاحترافي</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        شركة ميفوكس الرائدة في مجال نقل العفش في جدة. نقدم خدمات احترافية بأعلى معايير الجودة والأمان.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">روابط سريعة</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2">
+                            <i class="fas fa-chevron-left text-xs"></i> الرئيسية
+                        </a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2">
+                            <i class="fas fa-chevron-left text-xs"></i> خدماتنا
+                        </a></li>
+                        <li><a href="#offers" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2">
+                            <i class="fas fa-chevron-left text-xs"></i> العروض
+                        </a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2">
+                            <i class="fas fa-chevron-left text-xs"></i> معرض الأعمال
+                        </a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2">
+                            <i class="fas fa-chevron-left text-xs"></i> المدونة
+                        </a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2">
+                            <i class="fas fa-chevron-left text-xs"></i> اتصل بنا
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">خدماتنا</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2">
+                            <i class="fas fa-home text-xs"></i> نقل عفش منازل
+                        </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2">
+                            <i class="fas fa-building text-xs"></i> نقل مكاتب
+                        </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2">
+                            <i class="fas fa-tools text-xs"></i> فك وتركيب
+                        </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2">
+                            <i class="fas fa-warehouse text-xs"></i> تخزين العفش
+                        </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2">
+                            <i class="fas fa-box text-xs"></i> تغليف احترافي
+                        </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2">
+                            <i class="fas fa-weight-hanging text-xs"></i> نقل القطع الثقيلة
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">النشرة البريدية</h3>
+                    <p class="text-gray-400 mb-4">اشترك ليصلك كل جديد من العروض والخصومات</p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="بريدك الإلكتروني" class="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 focus:border-orange-500 focus:outline-none transition">
+                        <button type="submit" class="w-full bg-gradient-orange text-white py-3 rounded-xl font-bold hover:opacity-90 transition">
+                            اشترك الآن
+                        </button>
+                    </form>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-bold mb-3">وسائل الدفع المتاحة</h4>
+                        <div class="flex gap-2 flex-wrap">
+                            <div class="bg-white px-3 py-1 rounded text-gray-800 text-xs font-bold">VISA</div>
+                            <div class="bg-white px-3 py-1 rounded text-gray-800 text-xs font-bold">Mastercard</div>
+                            <div class="bg-white px-3 py-1 rounded text-gray-800 text-xs font-bold">مدى</div>
+                            <div class="bg-white px-3 py-1 rounded text-gray-800 text-xs font-bold">Apple Pay</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-gray-400 text-center">
+                        © 2024 ميفوكس. جميع الحقوق محفوظة. 
+                        <a href="#" class="text-orange-500 hover:text-orange-600">سياسة الخصوصية</a> | 
+                        <a href="#" class="text-orange-500 hover:text-orange-600">الشروط والأحكام</a>
+                    </p>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-lock text-green-500"></i>
+                        <span class="text-gray-400 text-sm">موقع آمن ومشفر SSL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Button -->
+    <a href="https://wa.me/966500000000" class="chat-button bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center hover:scale-110 transition-transform">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="fixed bottom-100 left-30 w-12 h-12 bg-gradient-orange text-white rounded-full shadow-xl opacity-0 pointer-events-none transition-all hover:scale-110 z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button id="close-lightbox" class="absolute top-8 right-8 text-white text-4xl hover:text-orange-500 transition z-10">
+            <i class="fas fa-times"></i>
+        </button>
+        <img id="lightbox-image" src="" alt="صورة مكبرة" class="max-w-full max-h-full rounded-2xl shadow-2xl">
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="./asstes/js/script.js"></script>
+</body>
+</html>
