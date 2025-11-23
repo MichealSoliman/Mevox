@@ -1596,145 +1596,524 @@
     </style>
 
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
+
+
+     <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gradient-to-br from-gray-50 to-orange-50 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-primary rounded-full -translate-y-48 translate-x-48 opacity-5"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-orange rounded-full translate-y-48 -translate-x-48 opacity-5"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Header Section -->
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">معرض أعمالنا</h2>
-                <p class="text-xl text-gray-600">شاهد بعض مشاريعنا الناجحة</p>
-                <div class="w-24 h-1 bg-gradient-orange mx-auto mt-4 rounded-full"></div>
+                <div class="inline-flex items-center gap-3 mb-6">
+                    <div class="w-3 h-3 bg-gradient-primary rounded-full"></div>
+                    <span class="primary-color font-bold text-lg">إنجازاتنا</span>
+                    <div class="w-3 h-3 bg-gradient-orange rounded-full"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">معرض <span class="primary-color">أعمالنا</span></h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">شاهد قصص نجاحنا في نقل العفش باحترافية وأمان</p>
+                <div class="w-24 h-1 bg-gradient-primary mx-auto mt-6 rounded-full"></div>
             </div>
             
             <!-- Filter Buttons -->
             <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
-                <button class="filter-btn active px-6 py-3 bg-orange-500 text-white rounded-xl font-semibold hover:bg-orange-600 transition" data-filter="all">
-                    الكل
+                <button class="filter-btn active px-6 py-3 text-white rounded-xl font-semibold transition-all duration-300 transform hover:scale-105" data-filter="all">
+                    <span>الكل</span>
                 </button>
-                <button class="filter-btn px-6 py-3 bg-white text-gray-800 rounded-xl font-semibold hover:bg-orange-500 hover:text-white transition" data-filter="homes">
-                    منازل
+                <button class="filter-btn px-6 py-3 bg-white text-gray-800 rounded-xl font-semibold border border-gray-200 transition-all duration-300 transform hover:scale-105" data-filter="homes">
+                    <span>منازل</span>
                 </button>
-                <button class="filter-btn px-6 py-3 bg-white text-gray-800 rounded-xl font-semibold hover:bg-orange-500 hover:text-white transition" data-filter="offices">
-                    مكاتب
+                <button class="filter-btn px-6 py-3 bg-white text-gray-800 rounded-xl font-semibold border border-gray-200 transition-all duration-300 transform hover:scale-105" data-filter="offices">
+                    <span>مكاتب</span>
                 </button>
-                <button class="filter-btn px-6 py-3 bg-white text-gray-800 rounded-xl font-semibold hover:bg-orange-500 hover:text-white transition" data-filter="villas">
-                    فلل
+                <button class="filter-btn px-6 py-3 bg-white text-gray-800 rounded-xl font-semibold border border-gray-200 transition-all duration-300 transform hover:scale-105" data-filter="villas">
+                    <span>فلل</span>
                 </button>
             </div>
             
             <!-- Portfolio Grid -->
-            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation">
                 <!-- Portfolio Item 1 -->
-                <div class="portfolio-item homes card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-64 bg-gray-200">
-                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=800" alt="نقل منزل" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                <div class="portfolio-item homes portfolio-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=800" alt="نقل منزل" class="w-full h-full object-cover portfolio-image">
+                        <div class="absolute top-4 right-4 bg-gradient-primary text-white px-4 py-2 rounded-full text-sm font-bold z-10">
+                            <i class="fas fa-home ml-2"></i>
                             منزل
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="text-white">
+                                <h4 class="text-xl font-bold mb-2">نقل منزل متكامل</h4>
+                                <p class="text-sm opacity-90">4 غرف نوم - صالة - مطبخ</p>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">نقل منزل في حي الصفا</h3>
-                        <p class="text-gray-600 mb-4">نقل كامل لمنزل مكون من 4 غرف مع فك وتركيب الأثاث</p>
-                        <button class="lightbox-btn text-orange-500 font-bold hover:text-orange-600 transition" data-image="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200">
-                            <i class="fas fa-search-plus mr-2"></i>
-                            عرض التفاصيل
-                        </button>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">نقل منزل في حي الصفا</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">نقل كامل لمنزل مكون من 4 غرف مع فك وتركيب الأثاث وتغليف احترافي</p>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i class="fas fa-clock"></i>
+                                <span>6 ساعات</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i class="fas fa-users"></i>
+                                <span>4 عمال</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <button class="lightbox-btn flex-1 bg-gradient-primary text-white py-3 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105" data-image="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200">
+                                <i class="fas fa-search-plus"></i>
+                                عرض التفاصيل
+                            </button>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Portfolio Item 2 -->
-                <div class="portfolio-item offices card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative h-64 bg-gray-200">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800" alt="نقل مكتب" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                <div class="portfolio-item offices portfolio-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800" alt="نقل مكتب" class="w-full h-full object-cover portfolio-image">
+                        <div class="absolute top-4 right-4 bg-gradient-orange text-white px-4 py-2 rounded-full text-sm font-bold z-10">
+                            <i class="fas fa-building ml-2"></i>
                             مكتب
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="text-white">
+                                <h4 class="text-xl font-bold mb-2">نقل مكتب شركة</h4>
+                                <p class="text-sm opacity-90">20 موظف - أجهزة تقنية</p>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">نقل مكتب شركة تقنية</h3>
-                        <p class="text-gray-600 mb-4">نقل مكتب كامل بجميع المعدات والأثاث المكتبي</p>
-                        <button class="lightbox-btn text-orange-500 font-bold hover:text-orange-600 transition" data-image="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200">
-                            <i class="fas fa-search-plus mr-2"></i>
-                            عرض التفاصيل
-                        </button>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">نقل مكتب شركة تقنية</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">نقل مكتب كامل بجميع المعدات والأثاث المكتبي مع الحفاظ على الأجهزة الإلكترونية</p>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i class="fas fa-clock"></i>
+                                <span>8 ساعات</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i class="fas fa-users"></i>
+                                <span>6 عمال</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <button class="lightbox-btn flex-1 bg-gradient-primary text-white py-3 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105" data-image="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200">
+                                <i class="fas fa-search-plus"></i>
+                                عرض التفاصيل
+                            </button>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Portfolio Item 3 -->
-                <div class="portfolio-item villas card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative h-64 bg-gray-200">
-                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=800" alt="نقل فيلا" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                <div class="portfolio-item villas portfolio-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=800" alt="نقل فيلا" class="w-full h-full object-cover portfolio-image">
+                        <div class="absolute top-4 right-4 bg-gradient-to-br from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-bold z-10">
+                            <i class="fas fa-hotel ml-2"></i>
                             فيلا
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="text-white">
+                                <h4 class="text-xl font-bold mb-2">نقل فيلا فاخرة</h4>
+                                <p class="text-sm opacity-90">6 غرف - ديكورات فاخرة</p>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">نقل فيلا فاخرة</h3>
-                        <p class="text-gray-600 mb-4">نقل فيلا كاملة مع جميع المحتويات والديكورات</p>
-                        <button class="lightbox-btn text-orange-500 font-bold hover:text-orange-600 transition" data-image="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1200">
-                            <i class="fas fa-search-plus mr-2"></i>
-                            عرض التفاصيل
-                        </button>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">نقل فيلا فاخرة</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">نقل فيلا كاملة مع جميع المحتويات والديكورات الفاخرة بأعلى معايير الأمان</p>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i class="fas fa-clock"></i>
+                                <span>12 ساعة</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i class="fas fa-users"></i>
+                                <span>8 عمال</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <button class="lightbox-btn flex-1 bg-gradient-primary text-white py-3 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105" data-image="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1200">
+                                <i class="fas fa-search-plus"></i>
+                                عرض التفاصيل
+                            </button>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Portfolio Item 4 -->
-                <div class="portfolio-item homes card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-64 bg-gray-200">
-                        <img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?q=80&w=800" alt="تغليف احترافي" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                <div class="portfolio-item homes portfolio-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?q=80&w=800" alt="تغليف احترافي" class="w-full h-full object-cover portfolio-image">
+                        <div class="absolute top-4 right-4 bg-gradient-primary text-white px-4 py-2 rounded-full text-sm font-bold z-10">
+                            <i class="fas fa-box ml-2"></i>
                             منزل
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="text-white">
+                                <h4 class="text-xl font-bold mb-2">تغليف متكامل</h4>
+                                <p class="text-sm opacity-90">مواد عالية الجودة</p>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">تغليف احترافي</h3>
-                        <p class="text-gray-600 mb-4">تغليف كامل لمحتويات منزل بمواد عالية الجودة</p>
-                        <button class="lightbox-btn text-orange-500 font-bold hover:text-orange-600 transition" data-image="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?q=80&w=1200">
-                            <i class="fas fa-search-plus mr-2"></i>
-                            عرض التفاصيل
-                        </button>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">تغليف احترافي</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">تغليف كامل لمحتويات منزل بمواد عالية الجودة مع تقنيات حماية متطورة</p>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i class="fas fa-clock"></i>
+                                <span>4 ساعات</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>تأمين شامل</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <button class="lightbox-btn flex-1 bg-gradient-primary text-white py-3 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105" data-image="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?q=80&w=1200">
+                                <i class="fas fa-search-plus"></i>
+                                عرض التفاصيل
+                            </button>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Portfolio Item 5 -->
-                <div class="portfolio-item offices card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative h-64 bg-gray-200">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800" alt="نقل مقر شركة" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                <div class="portfolio-item offices portfolio-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800" alt="نقل مقر شركة" class="w-full h-full object-cover portfolio-image">
+                        <div class="absolute top-4 right-4 bg-gradient-orange text-white px-4 py-2 rounded-full text-sm font-bold z-10">
+                            <i class="fas fa-briefcase ml-2"></i>
                             مكتب
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="text-white">
+                                <h4 class="text-xl font-bold mb-2">نقل مقر رئيسي</h4>
+                                <p class="text-sm opacity-90">3 طوابق - 50 موظف</p>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">نقل مقر شركة كبرى</h3>
-                        <p class="text-gray-600 mb-4">نقل مقر شركة بجميع المعدات والأثاث بكفاءة عالية</p>
-                        <button class="lightbox-btn text-orange-500 font-bold hover:text-orange-600 transition" data-image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200">
-                            <i class="fas fa-search-plus mr-2"></i>
-                            عرض التفاصيل
-                        </button>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">نقل مقر شركة كبرى</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">نقل مقر شركة بجميع المعدات والأثاث بكفاءة عالية وتنظيم محترف</p>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i class="fas fa-clock"></i>
+                                <span>2 يوم</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i class="fas fa-users"></i>
+                                <span>12 عامل</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <button class="lightbox-btn flex-1 bg-gradient-primary text-white py-3 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105" data-image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200">
+                                <i class="fas fa-search-plus"></i>
+                                عرض التفاصيل
+                            </button>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Portfolio Item 6 -->
-                <div class="portfolio-item villas card-hover bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative h-64 bg-gray-200">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800" alt="فيلا مودرن" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                <div class="portfolio-item villas portfolio-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800" alt="فيلا مودرن" class="w-full h-full object-cover portfolio-image">
+                        <div class="absolute top-4 right-4 bg-gradient-to-br from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-bold z-10">
+                            <i class="fas fa-star ml-2"></i>
                             فيلا
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="text-white">
+                                <h4 class="text-xl font-bold mb-2">فيلا عصرية</h4>
+                                <p class="text-sm opacity-90">تصميم حديث - ديكورات متميزة</p>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">فيلا مودرن</h3>
-                        <p class="text-gray-600 mb-4">نقل فيلا حديثة مع ديكورات فاخرة بكل احترافية</p>
-                        <button class="lightbox-btn text-orange-500 font-bold hover:text-orange-600 transition" data-image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200">
-                            <i class="fas fa-search-plus mr-2"></i>
-                            عرض التفاصيل
-                        </button>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">فيلا مودرن</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">نقل فيلا حديثة مع ديكورات فاخرة بكل احترافية وحرفية عالية</p>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i class="fas fa-clock"></i>
+                                <span>10 ساعات</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i class="fas fa-users"></i>
+                                <span>6 عمال</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <button class="lightbox-btn flex-1 bg-gradient-primary text-white py-3 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105" data-image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200">
+                                <i class="fas fa-search-plus"></i>
+                                عرض التفاصيل
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center mt-16" data-aos="fade-up">
+                <div class="gradient-primary rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32"></div>
+                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full translate-y-32 -translate-x-32"></div>
+                    
+                    <div class="relative z-10">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4">هل تريد تجربة مشابهة؟</h3>
+                        <p class="text-xl text-red-100 mb-6">اتصل بنا الآن واحصل على خدمة نقل استثنائية تناسب احتياجاتك</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="tel:0500000000" class="bg-white primary-color px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                                <i class="fas fa-phone"></i>
+                                اتصل بنا
+                            </a>
+                            <a href="#contact" class="bg-orange-500 text-white px-8 py-4 rounded-xl font-bold hover:bg-orange-600 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                                <i class="fas fa-calendar"></i>
+                                احجز معاينة
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <button id="close-lightbox" class="absolute top-8 left-8 text-white text-4xl hover:text-orange-500 transition z-10">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="lightbox-content">
+                <img id="lightbox-image" src="" alt="صورة مكبرة" class="lightbox-image">
+            </div>
+        </div>
     </section>
 
- 
+    <script>
+        // Portfolio Filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.classList.remove('text-white');
+                        btn.classList.add('bg-white', 'text-gray-800', 'border');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active', 'text-white');
+                    this.classList.remove('bg-white', 'text-gray-800', 'border');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 100);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxButtons = document.querySelectorAll('.lightbox-btn');
+            const closeLightbox = document.getElementById('close-lightbox');
+            
+            lightboxButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const imageUrl = this.getAttribute('data-image');
+                    lightboxImage.src = imageUrl;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            closeLightbox.addEventListener('click', function() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+
+       <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .primary-color {
+            color: #940104;
+        }
+        
+        .primary-bg {
+            background: #940104;
+        }
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, #940104 0%, #c80104 100%);
+        }
+        
+        .gradient-orange {
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+        }
+        
+        .portfolio-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(148, 1, 4, 0.1) 0%, rgba(251, 146, 60, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+        
+        .portfolio-card:hover::before {
+            opacity: 1;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(148, 1, 4, 0.15);
+        }
+        
+        .portfolio-image {
+            transition: transform 0.6s ease;
+        }
+        
+        .portfolio-card:hover .portfolio-image {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            z-index: 2;
+        }
+        
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .filter-btn {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #940104 0%, #f97316 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .filter-btn.active::before {
+            opacity: 1;
+        }
+        
+        .filter-btn span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .lightbox-image {
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+        
+        .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+        .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+        .stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+    </style
 
     <!-- FAQ Section -->
     <section id="faq" class="py-20 bg-gray-50">
